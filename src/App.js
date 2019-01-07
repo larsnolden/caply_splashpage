@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Global, css } from '@emotion/core';
+
+import Splashpage from 'views/Splashpage';
+
+//  inject fonts
+const base = css(`
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Source+Sans+Pro:300,400,600,700,900');
+  html {
+    min-height:100%;
+    min-width: 100%;
+    background: #FCFCFC;
+  }
+
+  body {
+    min-height:100%;
+    min-width: 100%;
+  }
+`);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div>
+          <Global styles={base} />
+          <Splashpage />
+        </div>
     );
   }
 }
