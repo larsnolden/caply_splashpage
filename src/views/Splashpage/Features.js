@@ -1,17 +1,30 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import styles from 'style_variables';
-
 import { ReactComponent as AlwaysOnIcon } from 'icons/Clockwise.svg';
 import { ReactComponent as SpeedometerIcon } from 'icons/Speedometer.svg';
 
 const Wrapper = styled.div`
+  max-width: 1920px;
+  margin: 0 auto;
+`;
+
+const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+const HalfContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  @media screen and (max-width: 1300px) {
+    flex-basis: 100%
+  }
 `;
 
 const Feature = styled.div`
@@ -67,31 +80,37 @@ const IconContainer = styled.div`
 
 export default () =>
   <Wrapper>
-    <Feature>
-      <HeadingIconContainer>
-        <IconContainer>
-          <AlwaysOnIcon />
-        </IconContainer>
-        <FeatureHeading>
-          Optimize Constantly
-        </FeatureHeading>
-      </HeadingIconContainer>
-      <FeatureText>
-        Caply will generate new keywords and adjust your campaigns to gurantee an optimal campaign performance at any time.
-      </FeatureText>
-    </Feature>
-    <Feature>
-      <HeadingIconContainer>
-        <IconContainer>
-          <SpeedometerIcon />
-        </IconContainer>
-        <FeatureHeading>
-          Outperform any competitor
-        </FeatureHeading>
-      </HeadingIconContainer>
-      <FeatureText>
-        With our proprietary key word algorithm, generating and vetting new keywords constantly.
-      </FeatureText>
-    </Feature>
+    <Container>
+      <HalfContainer>
+        <Feature>
+          <HeadingIconContainer>
+            <IconContainer>
+              <AlwaysOnIcon />
+            </IconContainer>
+            <FeatureHeading>
+              Optimize Constantly
+            </FeatureHeading>
+          </HeadingIconContainer>
+          <FeatureText>
+            Caply will generate new keywords and adjust your campaigns to gurantee an optimal campaign performance at any time.
+          </FeatureText>
+        </Feature>
+      </HalfContainer>
+      <HalfContainer>
+        <Feature>
+          <HeadingIconContainer>
+            <IconContainer>
+              <SpeedometerIcon />
+            </IconContainer>
+            <FeatureHeading>
+              Outperform the competition
+            </FeatureHeading>
+          </HeadingIconContainer>
+          <FeatureText>
+            With our proprietary key word algorithm, generating and vetting new keywords constantly.
+          </FeatureText>
+        </Feature>
+      </HalfContainer>
+    </Container>
   </Wrapper>
 ;
