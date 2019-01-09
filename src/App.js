@@ -15,6 +15,7 @@ const base = css(`
   body {
     min-height:100%;
     min-width: 100%;
+    margin: 0;
   }
 `);
 
