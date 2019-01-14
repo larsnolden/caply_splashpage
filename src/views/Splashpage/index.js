@@ -8,7 +8,6 @@ import Footer from './Footer';
 import Navigation from './Navigation';
 
 const Wrapper = styled.div`
-
 `;
 
 export default () =>

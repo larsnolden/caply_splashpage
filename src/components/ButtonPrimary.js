@@ -18,16 +18,19 @@ const ButtonShell = styled.div`
 
 const Text = styled.div`
   font-family: ${styles.ui_font};
-  font-size: ${styles.font_size[5]}px;
+  font-size: ${props => props.fontSize ? props.fontSize : styles.font_size[5] }px;
   color: ${styles.neutral_color[0]};
   font-weight: bold;
 `;
 
-const ButtonPrimary = props =>
+const ButtonPrimary = ({
+  fontSize,
+  ...props
+}) =>
   <ButtonShell
     {...props}
   >
-    <Text>
+    <Text fontSize={fontSize}>
       {props.children}
     </Text>
   </ButtonShell>

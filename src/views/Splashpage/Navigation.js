@@ -1,4 +1,7 @@
-import React, { useLayoutEffect } from 'react';
+import React, {
+  useLayoutEffect,
+  useState,
+} from 'react';
 import styled from '@emotion/styled';
 
 import styles from 'style_variables';
@@ -7,51 +10,63 @@ import ButtonPrimary from 'components/ButtonPrimary';
 import ButtonTertiary from 'components/ButtonTertiary';
 
 const Wrapper = styled.div`
-  justify-content: flex-end;
-  max-width: 1920px;
   display: flex;
   position: fixed;
   width: 100%;
-  background: ${props => props.showBackground ? '#fff' : ''};
+  justify-content: flex-end;
+  background: ${props => props.showBackground ? 'rgba(256, 256, 256, 1) ' : 'rgba(256, 256, 256, 0)'} ;
+  transition: background .1s linear,  box-shadow .1s linear;
+  box-shadow:  ${props => props.showBackground ? '0px 3px 6px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.15) ': 'none'};
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   margin: 20px 20px 20px 0;
   align-items: center;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    justify-items: center;
+    margin: 0;
+    width: 100%;
+  }
 `;
 
 const ButtonPrimaryStyled = styled(ButtonPrimary)`
-  width: ${styles.width[5]}px;
+  width: ${styles.width[4]}px;
   margin-left: 91px;
+  height: 40px;
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+  }
 `;
 
 const ButtonTertiaryStyled = styled(ButtonTertiary)`
   margin-left: 91px;
   font-size: ${styles.font_size[4]}px;
-  color: ${styles.neutral_color[8]};
+  color: ${styles.neutral_color[6]};
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+  }
 `;
 
-
 export default () => {
-  //  dirty update scroll state
-  // let showBackground = false;
-  // useLayoutEffect(() => {
-  //   // window.addEventListener('scroll', () => {
-  //   //   const threshold = 100;
-  //   //   if(window.scrollY >= threshold) showBackground = true;
-  //   //   else showBackground = false;
-  //   // });
+  const [showBackground, setBackground] = useState(false)
 
-  //   //  cleanup
-  //   return () => window.removeEventListener('scroll');
-  // });
+  function handleScroll() {
+    const threshold = 100;
+    if (window.scrollY < threshold) setBackground(false);
+    else setBackground(true);
+  }
 
-  const tester = () => 'some'
-  useLayoutEffect(tester);
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 
   return (
-    <Wrapper showBackground={true}>
+    <Wrapper
+      showBackground={showBackground}
+    >
       <ButtonContainer>
         <ButtonTertiaryStyled>
           Features
@@ -59,11 +74,13 @@ export default () => {
         <ButtonTertiaryStyled>
           The Team
         </ButtonTertiaryStyled>
-        <ButtonPrimaryStyled>
+        <ButtonPrimaryStyled
+          fontSize={styles.font_size[3]}
+        >
           Sign Up
         </ButtonPrimaryStyled>
       </ButtonContainer>
     </Wrapper>
   )
 }
-;
+  ;
