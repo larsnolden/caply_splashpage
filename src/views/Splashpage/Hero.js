@@ -6,14 +6,13 @@ import styles from 'style_variables';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  font-family: Roboto;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  flex-basis: 100vh;
+  font-family: Roboto;
   background: linear-gradient(180deg, #B0DEFF 0%, rgba(254, 243, 207, 0.01) 100%);
-`;
+  `;
 
 const Content = styled.div`
   max-width: 768px;

@@ -4,19 +4,20 @@ import styled from '@emotion/styled';
 const TeamPictureUrl = '/media/team.png';
 
 const Wrapper = styled.div`
-  max-width: 1920px;
-  margin: 109px auto;
-  @media screen and (max-width: 1300px) {
-    margin-top: 36px;
-  }
-`;
-
-const Container = styled.div`
-  min-height: 800px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
+  align-self: center;
+  max-width: 900px;
+`;
+
+const Item = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  flex-grow: 1;
 `;
 
 const FeatureHeading = styled.div`
@@ -40,51 +41,26 @@ const FeatureText = styled.div`
   margin-top: 14px;
 `;
 
-const HalfContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 50%;
-  @media screen and (max-width: 1300px) {
-    flex-basis: 100%
-  }
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  max-width: 640px;
-  @media screen and (max-width: 1300px) {
-    margin-top: 36px;
-  }
-`;
-
 const TeamPicture = styled.img`
-  width: 100%;
-  max-width: 544px;
   display: block;
-  @media screen and (max-width: 1300px) {
-    margin-top: 36px;
-  }
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: auto;
 `;
 
 export default () =>
 <Wrapper>
-  <Container>
-    <HalfContainer>
-      <TextContainer>
+    <Item>
         <FeatureHeading>
           The Team
         </FeatureHeading>
         <FeatureText>
           We are a team of engineers and friends that recognized the need for automation to succeed with Amazon PPC on a large scale.
         </FeatureText>
-      </TextContainer>
-    </HalfContainer>
-    <HalfContainer>
-        <TeamPicture src={TeamPictureUrl}/>
-    </HalfContainer>
-  </Container>
+    </Item>
+    <Item>
+      <TeamPicture src={TeamPictureUrl}/>
+    </Item>
 </Wrapper>
 ;

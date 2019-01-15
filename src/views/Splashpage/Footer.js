@@ -1,58 +1,73 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import styles from 'style_variables';
 import ButtonTertiary from 'components/ButtonTertiary';
+
+const Wrapper = styled.div`
+  background: #004A80;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-basis: 40px;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 900px) {
+    flex-basis: 105px;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
-  max-width: 1920px;
-  flex-basis: 50%;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+  justify-content: flex-end;
 
-  @media screen and (max-width: 1300px) {
-    flex-basis: 100%;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0 10px 0;
+    align-items: center;
   }
 `;
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100px;
-  background: #004A80;
-  display: flex;
-  justify-content: flex-end;
-`;
+const FooterItem = styled.div`
+  margin-right: 36px;
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex-basis: 100%;
+    margin: 0;
+  }
+  `;
 
 const ButtonTertiaryStyled = styled(ButtonTertiary)`
-  margin-left: 36px;
   color: #EFEFEF;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  flex-basis: 50%;
-
-  @media screen and (max-width: 1300px) {
-    flex-direction: column;
-  }
+  font-size:  ${styles.font_size[3]}px;
+  font-weight: normal;
 `;
 
 export default () =>
   <Wrapper>
     <Container>
-      <ButtonContainer>
+      <FooterItem>
         <ButtonTertiaryStyled>
           Features
-          </ButtonTertiaryStyled>
+            </ButtonTertiaryStyled>
+      </FooterItem>
+      <FooterItem>
         <ButtonTertiaryStyled>
           Team
-          </ButtonTertiaryStyled>
+            </ButtonTertiaryStyled>
+      </FooterItem>
+      <FooterItem>
         <ButtonTertiaryStyled>
           Legal
-          </ButtonTertiaryStyled>
-      </ButtonContainer>
+            </ButtonTertiaryStyled>
+      </FooterItem>
     </Container>
   </Wrapper>
   ;

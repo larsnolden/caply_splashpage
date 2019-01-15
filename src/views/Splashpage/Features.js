@@ -5,40 +5,25 @@ import { ReactComponent as AlwaysOnIcon } from 'icons/Clockwise.svg';
 import { ReactComponent as SpeedometerIcon } from 'icons/Speedometer.svg';
 
 const Wrapper = styled.div`
-  max-width: 1920px;
-  margin: 0 auto;
-`;
-
-const Container = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
-`;
-
-const HalfContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 50%;
-  @media screen and (max-width: 1300px) {
-    flex-basis: 100%
-  }
+  flex-wrap: wrap;
+  align-self: center;
+  max-width: 900px;
+  flex-grow: 1;
 `;
 
 const Feature = styled.div`
-  align-items: flex-start;
-  align-content: flex-start;
-  justify-content: flex-start;
-  max-width: 640px;
-
-  @media screen and (max-width: 1300px) {
-    margin-top: 36px;
-  }
+  display: flex;
+  flex-direction: column;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  flex-grow: 1;
 `;
 
 const FeatureHeading = styled.div`
+  flex-grow: 1;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -64,7 +49,7 @@ const HeadingIconContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  height: 68px;
+  flex-grow: 1;
   align-items: center;
 `;
 
@@ -80,8 +65,6 @@ const IconContainer = styled.div`
 
 export default () =>
   <Wrapper>
-    <Container>
-      <HalfContainer>
         <Feature>
           <HeadingIconContainer>
             <IconContainer>
@@ -95,8 +78,6 @@ export default () =>
             Caply will generate new keywords and adjust your campaigns to gurantee an optimal campaign performance at any time.
           </FeatureText>
         </Feature>
-      </HalfContainer>
-      <HalfContainer>
         <Feature>
           <HeadingIconContainer>
             <IconContainer>
@@ -110,7 +91,5 @@ export default () =>
             With our proprietary key word algorithm, generating and vetting new keywords constantly.
           </FeatureText>
         </Feature>
-      </HalfContainer>
-    </Container>
   </Wrapper>
 ;

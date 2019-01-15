@@ -8,6 +8,8 @@ import Footer from './Footer';
 import Navigation from './Navigation';
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export default () =>
