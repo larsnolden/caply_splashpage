@@ -5,6 +5,7 @@ import React, {
 import styled from '@emotion/styled';
 
 import styles from 'style_variables';
+import scrollTo from 'scrollTo';
 
 import ButtonPrimary from 'components/ButtonPrimary';
 import ButtonTertiary from 'components/ButtonTertiary';
@@ -74,10 +75,10 @@ export default () => {
       showBackground={showBackground}
     >
       <ButtonContainer>
-        <ButtonTertiaryStyled>
+        <ButtonTertiaryStyled onClick={() => scrollTo('features')}>
           Features
         </ButtonTertiaryStyled>
-        <ButtonTertiaryStyled>
+        <ButtonTertiaryStyled onClick={() => scrollTo('theTeam')}>
           The Team
         </ButtonTertiaryStyled>
         <ButtonPrimaryStyled

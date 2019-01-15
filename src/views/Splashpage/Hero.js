@@ -16,6 +16,9 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   max-width: 768px;
+  @media screen and (max-width: 900px) {
+    margin: 15px 10px 15px 10px;
+  }
 `;
 
 const Heading = styled.div`

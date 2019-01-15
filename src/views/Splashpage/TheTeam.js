@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   align-self: center;
   max-width: 900px;
+  @media screen and (max-width: 900px) {
+    margin-top 40px;
+  }
 `;
 
 const Item = styled.div`
@@ -18,6 +21,9 @@ const Item = styled.div`
   flex-basis: 200px;
   flex-shrink: 0;
   flex-grow: 1;
+  @media screen and (max-width: 900px) {
+    margin: 15px 10px 15px 10px;
+  }
 `;
 
 const FeatureHeading = styled.div`
@@ -50,7 +56,7 @@ const TeamPicture = styled.img`
 `;
 
 export default () =>
-<Wrapper>
+<Wrapper id="theTeam">
     <Item>
         <FeatureHeading>
           The Team

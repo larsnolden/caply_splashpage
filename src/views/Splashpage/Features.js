@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   align-self: center;
   max-width: 900px;
   flex-grow: 1;
+  @media screen and (max-width: 900px) {
+    margin-top 40px;
+  }
 `;
 
 const Feature = styled.div`
@@ -20,6 +23,10 @@ const Feature = styled.div`
   flex-basis: 200px;
   flex-shrink: 0;
   flex-grow: 1;
+
+  @media screen and (max-width: 900px) {
+    margin: 15px 10px 15px 10px;
+  }
 `;
 
 const FeatureHeading = styled.div`
@@ -64,7 +71,7 @@ const IconContainer = styled.div`
 `;
 
 export default () =>
-  <Wrapper>
+  <Wrapper id="features">
         <Feature>
           <HeadingIconContainer>
             <IconContainer>

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import styles from 'style_variables';
+import scrollTo from 'scrollTo';
+
 import ButtonTertiary from 'components/ButtonTertiary';
 
 const Wrapper = styled.div`
@@ -54,12 +56,12 @@ export default () =>
   <Wrapper>
     <Container>
       <FooterItem>
-        <ButtonTertiaryStyled>
+        <ButtonTertiaryStyled onClick={() => scrollTo('features')}>
           Features
             </ButtonTertiaryStyled>
       </FooterItem>
       <FooterItem>
-        <ButtonTertiaryStyled>
+        <ButtonTertiaryStyled onClick={() => scrollTo('theTeam')}>
           Team
             </ButtonTertiaryStyled>
       </FooterItem>
