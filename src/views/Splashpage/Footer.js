@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex-basis: 40px;
+  flex-basis: 60px;
   justify-content: center;
   align-items: center;
 

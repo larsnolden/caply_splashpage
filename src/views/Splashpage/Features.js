@@ -12,6 +12,8 @@ const Wrapper = styled.div`
   align-self: center;
   max-width: 900px;
   flex-grow: 1;
+  margin- top: 150px;
+  align-items: flex-start;
   @media screen and (max-width: 900px) {
     margin-top 40px;
   }
@@ -23,7 +25,7 @@ const Feature = styled.div`
   flex-basis: 200px;
   flex-shrink: 0;
   flex-grow: 1;
-
+  margin: 25px 20px 25px 20px;
   @media screen and (max-width: 900px) {
     margin: 15px 10px 15px 10px;
   }

@@ -4,15 +4,14 @@ import styled from '@emotion/styled';
 const TeamPictureUrl = '/media/team.png';
 
 const Wrapper = styled.div`
+margin- top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
   align-self: center;
   max-width: 900px;
-  @media screen and (max-width: 900px) {
-    margin-top 40px;
-  }
+  margin-top 40px;
 `;
 
 const Item = styled.div`
@@ -21,6 +20,7 @@ const Item = styled.div`
   flex-basis: 200px;
   flex-shrink: 0;
   flex-grow: 1;
+  margin: 25px 20px 25px 20px;
   @media screen and (max-width: 900px) {
     margin: 15px 10px 15px 10px;
   }
