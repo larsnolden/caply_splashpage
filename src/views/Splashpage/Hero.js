@@ -22,13 +22,13 @@ const Content = styled.div`
 `;
 
 const Heading = styled.div`
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  font-size: 60px;
-  letter-spacing: 0.05em;
-  color: #3F3F3F;
-  margin-bottom: 45px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+font-size: 60px;
+letter-spacing: 0.05em;
+color: #3F3F3F;
+margin: 45px 0 40px 0;
 `;
 
 const SubHeading = styled.div`
