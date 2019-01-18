@@ -3,7 +3,7 @@ export default  (sectionId) => {
 
     console.log(section)
     window.scrollTo({
-        top:  section.offsetTop, 
+        top:  section.offsetTop -100, 
         behavior: "smooth"
     })
 }
