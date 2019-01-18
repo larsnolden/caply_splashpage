@@ -81,11 +81,11 @@ export default () => {
         <ButtonTertiaryStyled onClick={() => scrollTo('theTeam')}>
           The Team
         </ButtonTertiaryStyled>
-        <ButtonPrimaryStyled
+        {/* <ButtonPrimaryStyled
           fontSize={styles.font_size[3]}
         >
           Sign Up
-        </ButtonPrimaryStyled>
+        </ButtonPrimaryStyled> */}
       </ButtonContainer>
     </Wrapper>
   )
